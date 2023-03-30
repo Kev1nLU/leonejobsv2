@@ -1,6 +1,8 @@
 from flask import Flask, render_template
 from markupsafe import escape
-
+'''
+venv\Scripts\activate
+'''
 app = Flask(__name__)
 
 @app.route('/')
