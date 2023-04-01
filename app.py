@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
 from markupsafe import escape
 '''
 venv\Scripts\activate
@@ -36,10 +36,9 @@ JOBS = [
 def index():
     return render_template('home.html', jobs = JOBS, company_name = 'Leone Jobs')
 
-@app.route('/hello/<name>')
-def hello(name):
-    return f'Hello  {escape(name)}, Welcome!!'
+@app.route("/api/jobs")
+def list_jobs():
+    return jsonify(JOBS)
 
-@app.route('/user/<int:userid>')
-def userid(userid):    
-    return f'Hello user number#: {escape(userid)}'
+if __name__ == '__main__':
+    app.run(debug=True)
