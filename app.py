@@ -3,6 +3,7 @@ from markupsafe import escape
 '''
 venv\Scripts\activate
 '''
+#To use gunicorn we have to put the name of the Flask object app / flaskap, etc
 app = Flask(__name__)
 
 JOBS = [
@@ -27,7 +28,15 @@ JOBS = [
     {
        'id':4,
        'title': 'Senior Python Developer',
-       'location':'Hybrid',
+       'location':'Remote',
+       'salary': '$30000'
+       
+    },
+    {
+       'id':5,
+       'title': 'Senior React Developer',
+       'location':'Remote',
+       'salary': '$30000'
        
     },
 ]
